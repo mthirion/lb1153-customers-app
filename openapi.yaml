@@ -12,24 +12,7 @@ paths:
   /customers:
     get:
       tags:
-      - Example Resource
-      responses:
-        "200":
-          description: OK
-          content:
-            text/plain:
-              schema:
-                type: string
-  /customers/JKHGFTGTYU/{host}:
-    get:
-      tags:
-      - Example Resource
-      parameters:
-      - name: host
-        in: path
-        required: true
-        schema:
-          type: string
+      - Customers Resource
       responses:
         "200":
           description: OK
