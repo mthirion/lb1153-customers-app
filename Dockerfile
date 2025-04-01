@@ -232,7 +232,7 @@
 ###
  
 
-FROM registry.access.redhat.com/ubi8/openjdk-11:1.11
+FROM registry.access.redhat.com/ubi8/openjdk-17:1.21
  
 
 
