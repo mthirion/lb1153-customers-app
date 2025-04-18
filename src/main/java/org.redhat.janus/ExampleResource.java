@@ -9,11 +9,21 @@ import jakarta.ws.rs.core.MediaType;
 @Path("/customers")
 public class ExampleResource {
 
+    private String michael="{\"id\": \"1\", \"name\": \"Michael\", \"lastname\": \"Thirion\", \"email\": \"mthirion@redhat.com\"}";
+    private String rachid="{\"id\": \"2\", \"name\": \"Rachid\", \"lastname\": \"Snoussi\", \"email\": \"snoussi@redhat.com\"}";
+
     @GET
     @Produces(MediaType.TEXT_PLAIN)
-    public String customer() {
-        System.out.println("customers called");
-        return "customer retrieved";
+    public String customers() {
+        return "[" + michael + "," + rachid + "]";
     }
 
+    @GET
+    @Path("/{id}")
+    @Produces(MediaType.TEXT_PLAIN)
+    public String customer(@PathParam("id") String userId) {
+        if (userId.equals("1")) return michael;
+        if (userId.equals("2")) return rachid;
+        return "{}";
+    }    
 }

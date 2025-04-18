@@ -9,13 +9,16 @@ import static org.hamcrest.CoreMatchers.is;
 @QuarkusTest
 public class ExampleResourceTest {
 
+    private String michael="{\"id\": 1, \"name\": \"Michael\", \"lastname\": \"Thirion\", \"email\": \"mthirion@redhat.com\"}";
+    private String rachid="{\"id\": 2, \"name\": \"Rachid\", \"lastname\": \"Snoussi\", \"email\": \"snoussi@redhat.com\"}";
+
     @Test
     public void testHelloEndpoint() {
         given()
-                .when().get("/customers")
+                .when().get("/customers/1")
                 .then()
                 .statusCode(200)
-                .body(is("customer retrieved"));
+                .body(is(michael));
     }
 
 }
